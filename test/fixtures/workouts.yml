@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  category,: MyString
+  distance: 1
+  pace: MyString
+
+two:
+  user_id: 
+  category,: MyString
+  distance: 1
+  pace: MyString
