@@ -1,17 +1,17 @@
-<h1> Log in Here </h1>
+<h1> Record a Training Session </h1>
 
-<% if flash[:message] %>
-  <%= flash[:message] %>
-<% end %>
+<%= form_for @training do |f| %>
 
-<%= form_for :user do |f| %>
+<%=f.label :date %>
+<%= f.date_field :date %>
 
-  <%=f.label :username %>
-  <%= f.text_field :username, required: true  %>
+<%=f.label :feeling %>
+<%= f.text_field :feeling %>
 
-  <%=f.label :password %>
-  <%= f.password_field :password, required: true %>
+<%=f.label :race_id %>
+<%= f.collection_select :race_id, current_user.races, :id, :title %>
 
-  <%= f.submit "Log in" %>
+<%= f.submit "Record Training" %>
+
 
 <% end %>
