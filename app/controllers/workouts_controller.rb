@@ -4,6 +4,7 @@ class WorkoutsController < ApplicationController
   end
 
   def show
+    @workout = Workout.find_by(params[:id])
   end
 
   def new
@@ -11,7 +12,7 @@ class WorkoutsController < ApplicationController
   end
 
   def create
-    @workout = @current_user.
+    @workout = current_user.
     created_workouts.build(
       workout_params)
       if @workout.save
@@ -23,6 +24,6 @@ class WorkoutsController < ApplicationController
 
 private
   def workout_params
-    params.require[:workout].permit(:name, :distance, :pace, :category)
+    params.require(:workout).permit(:name, :distance, :pace, :category)
   end
 end
