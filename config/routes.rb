@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+
+  root 'sessions#index'
+
+  get '/login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+
+  get '/signup' => 'users#new'
+  post 'signup' => 'users#create'
+
+  delete '/logout' => 'sessions#destroy'
+  
   resources :workouts
   resources :sessions
   resources :races
