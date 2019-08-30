@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 
   delete '/logout' => 'sessions#destroy'
 
-  resources :workouts
+  resources :workouts do
+    resources :trainings, only: [:index, :new, :create]
+  end 
   resources :trainings
   resources :races
   resources :users
