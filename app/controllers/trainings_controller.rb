@@ -1,8 +1,8 @@
 class TrainingsController < ApplicationController
 
 def new
-  if params[:workout_id] && workout = Workout.find_by_id(params[:workout_id])
-    @training = workout.trainings.build 
+  if params[:workout_id] && @workout = Workout.find_by_id(params[:workout_id])
+    @training = @workout.trainings.build
   else
     @training = Training.new
     @training.build_workout
