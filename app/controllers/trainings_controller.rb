@@ -14,6 +14,9 @@ def create
   end
 end
 
+def show
+  @training = Training.find_by(params[:id])
+end
 
 private
 
