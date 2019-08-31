@@ -14,6 +14,7 @@ def create
   if @training.save
     redirect_to training_path(@training)
   else
+    @workout = Workout.find_by_id(params[:workout_id])
     render :new
   end
 end
